@@ -34,7 +34,7 @@ define bind::zone($ensure=present,
     ensure  => $ensure,
     #notify  => Service["bind9"],
     file    => "/etc/bind/zones/${name}.conf",
-    require => Package["bind9"],
+    #require => Package["bind9"],
   }
 
   common::concatfilepart {"named.local.zone.${name}":
@@ -42,7 +42,7 @@ define bind::zone($ensure=present,
     #notify  => Service["bind9"],
     file    => "/etc/bind/named.conf.local",
     content => "include \"/etc/bind/zones/${name}.conf\";\n",
-    require => Package["bind9"],
+    #require => Package["bind9"],
   }
 
   if $is_slave {
