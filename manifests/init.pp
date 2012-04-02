@@ -48,7 +48,7 @@ node "ns1.domain.ltd" {
 */
 class bind {
   case $operatingsystem {
-    "Debian","Ubuntu": { include bind::base }
+    "Debian","Ubuntu": { include bind::debian }
     default: { fail "Unknown $operatingsystem" }
   }
 }
