@@ -75,7 +75,7 @@ define bind::zone($ensure=present,
       ensure => $ensure,
       file   => "/etc/bind/pri/${name}.conf",
       content => template("bind/zone-header.erb"),
-      require => Package["bind9"],
+   #   require => Package["bind9"],
     }
 
     file {"/etc/bind/pri/${name}.conf.d":
