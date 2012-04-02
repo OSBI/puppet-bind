@@ -10,6 +10,6 @@ class bind::debian inherits bind::base {
   Service["bind9"] {
     pattern => "/usr/sbin/named",
     restart => "/etc/init.d/bind9 reload",
-    require => Class[bind::base],
+    require => Class["bind::base"],
   }
 }
