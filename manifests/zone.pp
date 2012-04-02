@@ -30,6 +30,7 @@ define bind::zone($ensure=present,
     $zone_masters=false,
     $zone_origin=false) {
 
+	include bind::base
   common::concatfilepart {"bind.zones.${name}":
     ensure  => $ensure,
     notify  => Service["bind9"],
